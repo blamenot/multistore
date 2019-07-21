@@ -25,7 +25,7 @@ const actions = {
 	async fetchGoods({dispatch, commit}) {
 		commit('loading');
 		try {
-			const response = await fetch('/data.json')
+			const response = await fetch('data.json')
 			const data = await response.json()
 			if(data.Error) {
 				throw Error(data.Error)

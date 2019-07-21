@@ -1,6 +1,12 @@
 # multistore
 
 Display list of goods. Each should be in corresponding group.
+User can add items to shopping cart.
+Exchange rate and goods list refreshes every 15sec.
+
+[View on github.io](https://blamenot.github.io/multistore/)
+
+Bundled using vue cli.
 
 ## Project setup
 ```
