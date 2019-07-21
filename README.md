@@ -1,5 +1,7 @@
 # multistore
 
+Display list of goods. Each should be in corresponding group.
+
 ## Project setup
 ```
 yarn install
