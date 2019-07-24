@@ -12,6 +12,11 @@ describe('showcase.vue', () => {
 		actions: {
 			randomizeRate: sinon.spy(),
 			fetchGoods: sinon.spy()
+		},
+		getters: {
+			goodsGroups: function() {
+				return {}
+			}
 		}
 	}
 	const store = new Vuex.Store({

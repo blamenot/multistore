@@ -41,6 +41,7 @@
 }
 .cart-header-name-narrow {
 	display: none;
+
 }
 @media (max-width: 719px) {
 	.cart-header-name-wide {
@@ -65,7 +66,7 @@
 	text-align: center;
 }
 .cart-item-price {
-	width: 10rem;
+	width: 8rem;
 	text-align: center;
 }
 .cart-item-delete {

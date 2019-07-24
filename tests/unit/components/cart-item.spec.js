@@ -53,21 +53,15 @@ describe('cart-item.vue', () => {
 		expect(cart.mutations.setCartItemQuantity.lastCall.args[1])
 			.to.deep.include({goodsItemId: propsData.goodsItem.id, quantity: 1})
 	})
-	it('limits cart item max quantity', (done) => {
+	it('limits cart item max quantity', () => {
 		const wrapper = shallowMount(CartItem, {
 			localVue,
 			propsData,
 			store
 		})
-		const quantityInput = wrapper.find('input')
-		quantityInput.element.value = propsData.goodsItem.left + 1;
-		quantityInput.trigger('input')
-		quantityInput.trigger('change')
-		setTimeout(() => {
-			expect(cart.mutations.setCartItemQuantity.lastCall.args[1])
-				.to.deep.include({goodsItemId: propsData.goodsItem.id, quantity: propsData.goodsItem.left+1})
-			done();
-		},0)
+		wrapper.vm.$options.watch.itemQuantity.call(wrapper.vm, propsData.goodsItem.left + 1)
+		expect(cart.mutations.setCartItemQuantity.lastCall.args[1])
+			.to.deep.include({goodsItemId: propsData.goodsItem.id, quantity: propsData.goodsItem.left})
 	})
 	it('deletes cart item', () => {
 		const wrapper = shallowMount(CartItem, {
